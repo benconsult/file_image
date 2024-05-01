@@ -156,3 +156,13 @@ Run postman to send response on postman
         "src": "https://res.cloudinary.com/dkc95nltl/image/upload/v1714594222/file-upload/tmp-1-1714594219755_brkpod.jpg"
     }
 }
+
+copy the url and open on a browser
+
+# remove temp folder
+-import filesystem fs
+fs.unlinkSync(req.files.image.tempFilePath);
+-not storing files locally anymore
+-go to media library on cloudinary to check
+
+
