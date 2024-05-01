@@ -78,4 +78,14 @@ and make the public folder available in App.js
 -copy the response path from postman and post on web:http://localhost:3000/uploads/carbon.jpeg
 
 IDEA: upload image first, get the correct path, then create product
-NB: we use src because, we will use it in FE
+NB: we use src because, we will use it in FE in the image path
+-public folder resides on the server
+
+WHy not full path?
+- no need as it will be attach to the FE url automatically
+NB: On the FE when we upload, we make a request to uploads controller
+
+# Addditinal checks
+-if image exist, file size not bigger than specified
+-upload controler
+

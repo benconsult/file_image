@@ -16,9 +16,3 @@ const getAllProducts = async (req,res)=>{
 }
 
 module.exports = { createProduct,getAllProducts}
-
-// const createJob = async (req, res) =>{
-//     req.body.createdBy =  req.user.userId
-//     const job = await Job.create(req.body)
-//     res.status(StatusCodes.CREATED).json({ job })
-// }
