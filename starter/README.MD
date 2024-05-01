@@ -97,3 +97,62 @@ NB: On the FE when we upload, we make a request to uploads controller
 npm i cloudinary
 -App.js: import, use v2
 
+# uplaod image to cloudinary
+-uploadController.js
+-import cloudinary with v2
+IDEA: we need a temp file to store the image locally before sending it to cloud, hence, we add the useTempFile option in App.js - express fileUpload
+Then pass it in the function
+-log(req.files) to see the tempFile var
+{
+  image: {
+    name: 'image.png',
+    data: <Buffer >,
+    size: 17624,
+    encoding: '7bit',
+    tempFilePath: '/Users/baremu/file_image/starter/tmp/tmp-1-1714592717792',
+    truncated: false,
+    mimetype: 'image/png',
+    md5: 'f4cc04e1f2912a6d8584dc1791622494',
+    mv: [Function: mv]
+  }
+}
+
+NB: you will see a tmp folder in the project root
+NB: express file upload gives access to req.files.image
+
+-create a folder in cloudinary: file explorer/new folder and use the folder name in the folder option of the app.
+folder:'file-upload'
+
+Test: upload a file on postman and check the terminal and go to cloudinary folder to check the new file
+{
+  asset_id: '7101bac085276875d3717677ac16ae7d',
+  public_id: 'file-upload/tmp-1-1714593554029_sjmhyx',
+  version: 1714593555,
+  version_id: '72a065a629f3446f636f98cfd67edb07',
+  signature: '189ec44831c66414f6bac968a331c8cf491ad0c7',
+  width: 580,
+  height: 302,
+  format: 'png',
+  resource_type: 'image',
+  created_at: '2024-05-01T19:59:15Z',
+  tags: [],
+  bytes: 17624,
+  type: 'upload',
+  etag: 'f4cc04e1f2912a6d8584dc1791622494',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dkc95nltl/image/upload/v1714593555/file-upload/tmp-1-1714593554029_sjmhyx.png',
+  secure_url: 'https://res.cloudinary.com/dkc95nltl/image/upload/v1714593555/file-upload/tmp-1-1714593554029_sjmhyx.png',
+  folder: 'file-upload',
+  original_filename: 'tmp-1-1714593554029',
+  api_key: '*******'
+}
+
+NB: secure_url is where the image is accessible on cloudinary
+NB: FE is expecting { image: { src: }}
+
+Run postman to send response on postman
+{
+    "image": {
+        "src": "https://res.cloudinary.com/dkc95nltl/image/upload/v1714594222/file-upload/tmp-1-1714594219755_brkpod.jpg"
+    }
+}
