@@ -89,3 +89,11 @@ NB: On the FE when we upload, we make a request to uploads controller
 -if image exist, file size not bigger than specified
 -upload controler
 
+# cloudinary
+-storing images in the cloud
+-free tier: create an accout : you need cloud name, API key, API secret
+
+# cloudinary setup
+npm i cloudinary
+-App.js: import, use v2
+
