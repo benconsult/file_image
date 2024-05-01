@@ -78,3 +78,4 @@ and make the public folder available in App.js
 -copy the response path from postman and post on web:http://localhost:3000/uploads/carbon.jpeg
 
 IDEA: upload image first, get the correct path, then create product
+NB: we use src because, we will use it in FE
